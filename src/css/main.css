@@ -106,6 +106,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 ol,
 ul {
@@ -125,4 +126,93 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #14181b;
+  color: #ffffff;
+}
+.body-container {
+  display: flex;
+}
+.body-container .nav-box {
+  min-width: 300px;
+  height: 100vh;
+  background-color: #1a1e23;
+}
+.body-container .body-box {
+  width: 100%;
+}
+.navbar {
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+}
+.navbar .logo-container {
+  background-color: #143598;
+  min-width: 300px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  float: left;
+}
+.navbar .logo-container .logo {
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+  border: 0.1em solid white;
+  padding: 0.5em 0.7em;
+  width: 100px;
+}
+.navbar .search-box {
+  width: 100%;
+  background-color: #3d5acd;
+  border: 0;
+  color: #ffffff;
+  font-size: 2em;
+  font-family: "Font Awesome 5 Free", Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  padding-left: 20px;
+}
+.navbar .search-box:focus {
+  outline: none;
+}
+.navbar .search-box::placeholder {
+  font-size: 0.8em;
+  padding-bottom: 700px;
+  padding: 0;
+  color: #ffffff;
+  opacity: 0.5;
+  font-weight: 900;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav nav {
+  display: flex;
+  flex-direction: column;
+}
+.sidenav nav .side-nav-item {
+  font-size: 1.4em;
+  list-style-type: none;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.3s;
+}
+.sidenav nav .side-nav-item:hover {
+  background-color: #0c0c0c;
+  color: #143598;
+}
+.sidenav nav .item-1 {
+  padding-right: 37px;
+}
+.sidenav nav .item-2 {
+  padding-right: 52px;
+}
+.sidenav nav .item-4 {
+  padding-right: 24px;
 }
