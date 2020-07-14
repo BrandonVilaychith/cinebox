@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Sidenav = () => {
   return (
-    <div className="sidenav">
+    <div className="sidebar">
       <nav>
         <Link to="/dates" className="side-nav-item item-1">
           {/* prettier-ignore */}

@@ -43,38 +43,82 @@
   }
 }
 
-.nav-box {
-  position: fixed;
-  // position: sticky;
-  // position: absolute;
-}
-
-.sidenav {
-  margin-top: 100px;
-  nav {
-    display: flex;
-    flex-direction: column;
-    .side-nav-item {
-      font-size: 1.4em;
-      list-style-type: none;
-      text-align: center;
-      padding: 15px 0;
-      text-decoration: none;
-      color: #ffffff;
-      transition: 0.3s;
-      &:hover {
-        background-color: #0c0c0c;
-        color: #143598;
+.wrapper {
+  // border: 1px solid red;
+  height: 100vh;
+  display: flex;
+  .sidebar {
+    padding-top: 10em;
+    min-width: 300px;
+    background-color: #1a1e23;
+    height: 100vh;
+    position: fixed;
+    nav {
+      display: flex;
+      flex-direction: column;
+      .side-nav-item {
+        font-size: 1.4em;
+        list-style-type: none;
+        text-align: center;
+        padding: 15px 0;
+        text-decoration: none;
+        color: #ffffff;
+        transition: 0.3s;
+        &:hover {
+          background-color: #0c0c0c;
+          color: #143598;
+        }
+      }
+      .item-1 {
+        padding-right: 37px;
+      }
+      .item-2 {
+        padding-right: 52px;
+      }
+      .item-4 {
+        padding-right: 24px;
       }
     }
-    .item-1 {
-      padding-right: 37px;
+  }
+  .discover-page {
+    // border: 1px solid blue;
+    flex-grow: 1;
+    margin-top: 70px;
+    margin-left: 300px;
+    .discover-title {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 6em;
+      margin-bottom: 30px;
     }
-    .item-2 {
-      padding-right: 52px;
-    }
-    .item-4 {
-      padding-right: 24px;
+    .discover-movie-container {
+      display: grid;
+      max-width: 90%;
+      margin: auto;
+      // border: 1px solid red;
+      grid-template-columns: repeat(5, 1fr);
+      // justify-content: space-evenly;
+      justify-items: center;
+      // grid-template-rows: auto;
+      grid-gap: 1.5em;
+      // column-gap: 0;
+      .movie-image {
+        // width: 300px;
+        border: 1px solid red;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+        }
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }
+
+// .nav-box {
+//   position: fixed;
+//   // position: sticky;
+//   // position: absolute;
+// }

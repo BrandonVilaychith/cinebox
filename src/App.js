@@ -8,18 +8,21 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="body-container">
-        <div className="nav-box">
-          <Sidenav />
-        </div>
-        <div className="body-box">
-          <Switch>
-            <Route exact path="/" component={Discover} />
-          </Switch>
-        </div>
+      <div className="wrapper">
+        <Sidenav />
+        <Discover />
       </div>
     </div>
   );
 }
+
+// <div className="body-container">
+// <div className="nav-box">
+//   <Sidenav />
+// </div>
+// <div className="body-box">
+//   <Switch>{/* <Route exact path="/" component={Discover} /> */}</Switch>
+// </div>
+// </div>
 
 export default App;
