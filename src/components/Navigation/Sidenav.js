@@ -7,16 +7,16 @@ const Sidenav = () => {
       <nav>
         <Link to="/dates" className="side-nav-item item-1">
           {/* prettier-ignore */}
-          <i class="fas fa-home"></i> Discover
+          <i className="fas fa-home"></i> Discover
         </Link>
         <Link className="side-nav-item item-2">
-          <i class="fas fa-fire-alt"></i> Popular
+          <i className="fas fa-fire-alt"></i> Popular
         </Link>
         <Link className="side-nav-item">
-          <i class="fas fa-ticket-alt"></i> Now Playing
+          <i className="fas fa-ticket-alt"></i> Now Playing
         </Link>
         <Link className="side-nav-item item-4">
-          <i class="fas fa-film"></i> Upcoming
+          <i className="fas fa-film"></i> Upcoming
         </Link>
       </nav>
     </div>
