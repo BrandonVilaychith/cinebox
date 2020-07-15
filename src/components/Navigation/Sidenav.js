@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Sidebar = styled.div`
@@ -15,7 +15,7 @@ const Nav = styled.nav`
   flex-direction: column;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   font-size: 1.4em;
   list-style-type: none;
   text-align: center;
@@ -33,17 +33,17 @@ const Sidenav = () => {
   return (
     <Sidebar>
       <Nav>
-        <StyledLink to="/dates" id="item-1">
+        <StyledLink exact to="/" id="item-1">
           {/* prettier-ignore */}
           <i className="fas fa-home" /> Discover
         </StyledLink>
-        <StyledLink id="item-2">
+        <StyledLink to="/popular" id="item-2">
           <i className="fas fa-fire-alt" /> Popular
         </StyledLink>
-        <StyledLink>
+        <StyledLink to="/now_playing">
           <i className="fas fa-ticket-alt" /> Now Playing
         </StyledLink>
-        <StyledLink id="item-4">
+        <StyledLink to="/upcoming" id="item-4">
           <i className="fas fa-film" /> Upcoming
         </StyledLink>
       </Nav>

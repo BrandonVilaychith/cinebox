@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import styled from "styled-components";
+
+import Rating from "./Rating";
 
 const DiscoverPage = styled.div`
   flex-grow: 1;
@@ -14,6 +15,7 @@ const Title = styled.h1`
   text-transform: uppercase;
   font-size: 6em;
   margin-bottom: 30px;
+  text-shadow: 1px 1px #14181b;
 `;
 
 const Container = styled.div`
@@ -29,12 +31,13 @@ const Container = styled.div`
 `;
 
 const Movie = styled.div`
-  border: 1px solid red;
-  cursor: pointer;
+  /* border: 1px solid red; */
+  width: 100%;
 `;
 
 const Image = styled.img`
   width: 100%;
+  cursor: pointer;
 `;
 
 const Discover = () => {
@@ -60,6 +63,8 @@ const Discover = () => {
           src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
           alt={`${movie.title}`}
         />
+        <h2>{movie.title}</h2>
+        <Rating voteAverage={Math.round(movie.vote_average)} />
       </Movie>
     );
   });
