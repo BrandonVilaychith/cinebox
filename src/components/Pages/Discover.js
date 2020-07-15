@@ -30,15 +30,46 @@ const Container = styled.div`
   }
 `;
 
+const Overlay = styled.div`
+  transition: 0.5s ease;
+`;
+
 const Movie = styled.div`
-  /* border: 1px solid red; */
+  border: 1px solid red;
   width: 100%;
+  position: relative;
+
+  ${Overlay} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #fff;
+  }
+  &:hover ${Overlay} {
+    display: block;
+    transition: 2s ease-in-out;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  /* background: black; */
 `;
 
 const Image = styled.img`
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
   cursor: pointer;
 `;
+
+// const MovieInfo = styled.div`
+//   border: 1px solid red;
+//   display: flex;
+//   flex-direction: column;
+//   height: 50px;
+// `;
 
 const Discover = () => {
   const [page, setPage] = useState(1);
@@ -58,14 +89,21 @@ const Discover = () => {
 
   const movies = movieList.map((movie) => {
     return (
-      <Movie key={movie.id}>
-        <Image
-          src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-          alt={`${movie.title}`}
-        />
-        <h2>{movie.title}</h2>
-        <Rating voteAverage={Math.round(movie.vote_average)} />
-      </Movie>
+      <Overlay>
+        <Movie key={movie.id}>
+          <Image
+            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+            alt={`${movie.title}`}
+          />
+          <Overlay>
+            <h1>Hello</h1>
+          </Overlay>
+          {/* <MovieInfo>
+          <h2>{movie.title}</h2>
+          <Rating voteAverage={Math.round(movie.vote_average)} />
+        </MovieInfo> */}
+        </Movie>
+      </Overlay>
     );
   });
 
@@ -73,7 +111,7 @@ const Discover = () => {
     <DiscoverPage>
       <Title>Discover</Title>
       <Container>{movies}</Container>
-      <button onClick={(e) => setPage(page + 1)}>next</button>
+      <button onClick={() => setPage(page + 1)}>next</button>
     </DiscoverPage>
   );
 };
