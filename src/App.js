@@ -1,18 +1,24 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navigation/Navbar";
 import Sidenav from "./components/Navigation/Sidenav";
 import Discover from "./components/Pages/Discover";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  height: 100vh;
+  display: flex;
+`;
 
 function App() {
   return (
-    <div>
+    <Fragment>
       <Navbar />
-      <div className="wrapper">
+      <Wrapper>
         <Sidenav />
         <Discover />
-      </div>
-    </div>
+      </Wrapper>
+    </Fragment>
   );
 }
 
