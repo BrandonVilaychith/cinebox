@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navigation/Navbar";
 import Sidenav from "./components/Navigation/Sidenav";
 import Discover from "./components/Pages/Discover";
+import Popular from "./components/Pages/Popular";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -16,7 +17,10 @@ function App() {
       <Navbar />
       <Wrapper>
         <Sidenav />
-        <Discover />
+        <Switch>
+          <Route exact path="/" component={Discover} />
+          <Route path="/popular" component={Popular} />
+        </Switch>
       </Wrapper>
     </Fragment>
   );
