@@ -22,7 +22,7 @@ const Title = styled.h1`
 
 const Container = styled.div`
   display: grid;
-  max-width: 90%;
+  max-width: 1800px;
   margin: auto;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;

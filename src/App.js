@@ -5,6 +5,8 @@ import Sidenav from "./components/Navigation/Sidenav";
 import Discover from "./components/Pages/Discover";
 import Popular from "./components/Pages/Popular";
 import styled from "styled-components";
+import Upcoming from "./components/Pages/Upcoming";
+import Playing from "./components/Pages/Playing";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -20,19 +22,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Discover} />
           <Route path="/popular" component={Popular} />
+          <Route path="/now_playing" component={Playing} />
+          <Route path="/upcoming" component={Upcoming} />
         </Switch>
       </Wrapper>
     </Fragment>
   );
 }
-
-// <div className="body-container">
-// <div className="nav-box">
-//   <Sidenav />
-// </div>
-// <div className="body-box">
-//   <Switch>{/* <Route exact path="/" component={Discover} /> */}</Switch>
-// </div>
-// </div>
 
 export default App;
