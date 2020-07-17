@@ -27,7 +27,11 @@ const Container = styled.div`
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
   grid-gap: 1.5em;
+  @media (max-width: 1920px) {
+    max-width: 1500px;
+  }
   @media (max-width: 1550px) {
+    max-width: 1200px;
     grid-template-columns: repeat(4, 1fr);
   }
 `;

@@ -7,6 +7,7 @@ import Popular from "./components/Pages/Popular";
 import styled from "styled-components";
 import Upcoming from "./components/Pages/Upcoming";
 import Playing from "./components/Pages/Playing";
+import Movie from "./components/Movie";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -24,6 +25,7 @@ function App() {
           <Route path="/popular" component={Popular} />
           <Route path="/now_playing" component={Playing} />
           <Route path="/upcoming" component={Upcoming} />
+          <Route path="/:id" component={Movie} />
         </Switch>
       </Wrapper>
     </Fragment>
