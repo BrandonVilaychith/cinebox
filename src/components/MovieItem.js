@@ -63,21 +63,27 @@ const Image = styled.img`
 `;
 
 const MovieItem = ({ movie }) => {
-  const release_year = movie.release_date.split("-")[0];
+  const { release_date, title, id, poster_path, vote_average } = movie;
+
+  const release_year = release_date.split("-")[0];
+
+  const addDefaultSrc = (e) => {
+    e.target.src = `https://via.placeholder.com/300x450?text=${title}`;
+  };
 
   return (
-    <Link to={`/${movie.id}`}>
-      <Movie key={movie.id}>
+    <Link to={`/${id}`}>
+      <Movie key={id}>
         <Image
-          src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-          alt={`${movie.title}`}
+          src={`https://image.tmdb.org/t/p/w342${poster_path}`}
+          alt={`${title}`}
+          onError={addDefaultSrc}
         />
         <div className="overlay">
-          <Title>{movie.title}</Title>
+          <Title>{title}</Title>
           <div className="info">
             <p>
-              {movie.vote_average}{" "}
-              <i className="fa fa-star" aria-hidden="true"></i>
+              {vote_average} <i className="fa fa-star" aria-hidden="true"></i>
             </p>
             <p>{release_year}</p>
           </div>
